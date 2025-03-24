@@ -1,0 +1,233 @@
+/* writing.css */
+
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0;
+    background-color: rgb(224, 227, 233);
+    height: 100vh;
+}
+
+.dark-mode {
+    background-color: rgb(20, 20, 20);
+    color: white;
+}
+
+#themeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    font-size: 1.2em;
+    transition: border-color 0.3s ease;
+    z-index: 1000;
+}
+
+#themeButton.dark-mode {
+    border-color: #555;
+}
+
+#themeButton i {
+    transition: color 0.3s ease;
+}
+
+body.dark-mode #writingThemeButton i {
+    color: white !important;
+}
+
+#backgroundMarco {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10em;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.dark-mode #backgroundMarco {
+    color: rgba(255, 255, 255, 0.1);
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+#activitiesButton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+#activitiesButton:hover {
+    background-color: #43A047;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.dark-mode #activitiesButton {
+    background-color: #312abb;
+}
+
+.dark-mode #activitiesButton:hover {
+    background-color: #1c105b;
+}
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: #f0f0f0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar h2 {
+    padding: 8px 8px 8px 32px;
+    text-align: center;
+    color: black;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    color: black;
+}
+
+body.dark-mode .sidebar { /* Corrected selector */
+    background-color: #333;
+    color: #eee;
+}
+
+body.dark-mode .sidebar li { /* Corrected selector */
+    color: black;
+}
+
+body.dark-mode .sidebar h2 { /* Corrected selector */
+    color: black;
+}
+
+#themeButton i {
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.dark-mode #themeButton i {
+    color: white !important;
+}
+
+#promptContainer {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 8px;
+    box-shadow: none;
+    z-index: 998;
+}
+
+.dark-mode #promptContainer {
+    background-color: transparent;
+    color: white;
+    box-shadow: none;
+}
+
+#promptInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    background-color: white;
+    color: black;
+    font-family: 'Courier New', monospace;
+}
+
+.dark-mode #promptInput {
+    background-color: #000000;
+    color: white;
+    border: 0.01px solid #ffffff;
+}
+
+#promptInput::placeholder {
+    color: #000000;
+    font-family: 'Courier New', monospace;
+}
+
+.dark-mode #promptInput::placeholder {
+    color: white;
+}
+
+#generateButton {
+    padding: 10px 20px;
+    background-color: green;
+    color: black;
+    border: px solid black;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    margin: 0px 20px 20px 20px;
+}
+
+#generateButton:hover {
+    background-color: #008000;
+}
+
+.dark-mode #generateButton {
+    background-color: #312abb;
+    color: rgb(255, 255, 255);
+    border: 0.01px solid #ffffff;
+}
+
+.dark-mode #generateButton:hover {
+    background-color: #1c105b;
+}
+
+.dark-mode #generatedOutput {
+    background-color: #000000;
+    color: white;
+    border-color: #000000;
+}
+
+#promptContainer > * {
+    background-color: white;
+}
+
+.dark-mode #promptContainer > * {
+    background-color: transparent;
+}
+
+#promptInput, #generateButton {
+    background-color: inherit;
+}

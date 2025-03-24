@@ -1,0 +1,704 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(225, 229, 237);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: rgb(20, 20, 20);
+  color: white;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#marcoText {
+  font-size: 5em;
+  font-weight: bold;
+  color: rgb(165, 164, 164);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+
+#marcoText.dark-mode {
+  color: white;
+}
+
+#marcoText:hover {
+  transform: scale(1.1);
+}
+
+#tagline {
+  font-size: 1.5em;
+  color: rgb(30, 101, 194);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-top: 10px;
+  transition: color 0.3s ease;
+}
+
+#tagline.dark-mode {
+  color: lightblue;
+}
+
+#themeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  font-size: 1.2em;
+  transition: border-color 0.3s ease;
+}
+
+#themeButton.dark-mode {
+  border-color: #555;
+}
+
+#themeButton i {
+  transition: color 0.3s ease;
+}
+
+#themeButton.dark-mode i {
+  color: white;
+}
+.unclickable {
+  pointer-events: none;
+  cursor: default;
+}
+
+
+/* NEWPAGE .HTML 
+css  */
+
+
+/* Default Light Mode */
+#newpageBody {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(225, 229, 237);
+    color: black;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
+#newpageBody.dark-mode {
+    background-color: rgb(20, 20, 20);
+    color: white;
+}
+
+/* Signup/Login Box */
+#auth-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
+#auth-container.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    background-color: lightgray;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tab.active {
+    background-color: gray;
+    color: white;
+}
+
+/* Dark Mode Tabs */
+#newpageBody.dark-mode .tab {
+    background-color: #555;
+    color: white;
+}
+
+/* Form */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Inputs */
+input {
+    width: 90%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid gray;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Inputs */
+#newpageBody.dark-mode input {
+    background-color: #555;
+    color: white;
+    border-color: white;
+}
+
+/* Error Message */
+.error-msg {
+    color: red;
+    font-size: 12px;
+    display: none;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+
+/* Button */
+.auth-button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-button:hover {
+    background-color: darkblue;
+}
+
+/* Dark Mode Button */
+#newpageBody.dark-mode .auth-button {
+    background-color: lightblue;
+    color: black;
+}
+
+/* Theme Toggle Button */
+#themeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    font-size: 1.2em;
+    transition: border-color 0.3s ease;
+}
+
+#themeButton.dark-mode {
+    border-color: #555;
+}
+
+#themeButton i {
+    transition: color 0.3s ease;
+}
+
+#themeButton.dark-mode i {
+    color: white;
+}
+/* Default Light Mode */
+#newpageBody {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(225, 229, 237);
+    color: black;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
+#newpageBody.dark-mode {
+    background-color: rgb(20, 20, 20);
+    color: white;
+}
+
+/* Marco Background Text */
+#backgroundMarco {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10em;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    pointer-events: none; /* Prevents interaction */
+    z-index: -1;
+}
+
+/* Dark Mode Marco Background */
+#newpageBody.dark-mode #backgroundMarco {
+    color: rgba(255, 255, 255, 0.1);
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.2);
+}
+
+/* Signup/Login Box */
+#auth-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 300px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    z-index: 1; /* Ensures it's above MARCO */
+}
+
+/* Dark Mode */
+#auth-container.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.tab {
+    flex: 1;
+    padding: 10px;
+    background-color: lightgray;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tab.active {
+    background-color: gray;
+    color: white;
+}
+
+/* Dark Mode Tabs */
+#newpageBody.dark-mode .tab {
+    background-color: #555;
+    color: white;
+}
+
+/* Form */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Inputs */
+input {
+    width: 90%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid gray;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Inputs */
+#newpageBody.dark-mode input {
+    background-color: #555;
+    color: white;
+    border-color: white;
+}
+
+/* Error Message */
+.error-msg {
+    color: red;
+    font-size: 12px;
+    display: none;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+
+/* Button */
+.auth-button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-button:hover {
+    background-color: darkblue;
+}
+
+/* Dark Mode Button */
+#newpageBody.dark-mode .auth-button {
+    background-color: lightblue;
+    color: black;
+}
+
+/* Theme Toggle Button */
+#themeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    font-size: 1.2em;
+    transition: border-color 0.3s ease;
+}
+
+#themeButton.dark-mode {
+    border-color: #555;
+}
+
+#themeButton i {
+    transition: color 0.3s ease;
+}
+
+#themeButton.dark-mode i {
+    color: white;
+}
+/* Hide login form by default */
+.hidden {
+  display: none;
+}
+
+/* Active tab styling */
+.tab.active {
+  background-color: gray;
+  color: white;
+}
+/* Signup & Login Box */
+#auth-container {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    padding: 20px;
+    width: 350px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+}
+
+.tab {
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 0.3s;
+    font-weight: bold;
+    color: #333;
+}
+
+.tab.active {
+    background: #3a2f80; /* Dark Purple */
+    color: white;
+}
+
+/* Input fields */
+.input-box {
+    position: relative;
+    margin: 15px 0;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #3a2f80; /* Dark Purple */
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-box input:focus {
+    border-color: #291e6b; /* Even Darker Purple */
+}
+
+/* Button */
+.auth-button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    background: #3a2f80; /* Dark Purple */
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.auth-button:hover {
+    background: #291e6b; /* Even Darker Purple */
+}
+
+/* Error Message */
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    display: none;
+}
+
+/* Dark Mode */
+.dark-mode #auth-container {
+    background: rgba(20, 20, 20, 0.8);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode .tab {
+    color: white;
+}
+
+.dark-mode .tab.active {
+    background: #d35400; /* Dark Orange */
+}
+
+.dark-mode .input-box input {
+    background: #222;
+    color: white;
+    border-color: #d35400; /* Dark Orange */
+}
+
+.dark-mode .auth-button {
+    background: #d35400; /* Dark Orange */
+}
+
+.dark-mode .auth-button:hover {
+    background: #a84300; /* Darker Orange */
+}
+/* Signup & Login Box - Smaller and More Compact */
+#auth-container {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  padding: 15px;
+  width: 300px; /* Smaller width */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: 0.3s;
+}
+
+/* Tabs - Added space */
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.tab {
+  cursor: pointer;
+  padding: 8px 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+  font-weight: bold;
+  color: #333;
+}
+
+.tab.active {
+  background: #1a237e; /* Dark Blue */
+  color: white;
+}
+
+/* Input fields - Improved visibility */
+.input-box {
+  position: relative;
+  margin: 12px 0;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #1a237e; /* Dark Blue */
+  border-radius: 6px;
+  font-size: 0.9em;
+  outline: none;
+  transition: 0.3s;
+  background: white;
+  color: #333;
+}
+
+.input-box input:focus {
+  border-color: #0d1545; /* Even Darker Blue */
+}
+
+/* Button - Dark Blue */
+.auth-button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9em;
+  background: #1a237e; /* Dark Blue */
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 8px;
+}
+
+.auth-button:hover {
+  background: #0d1545; /* Even Darker Blue */
+}
+
+/* Spacing between Signup & Login Forms */
+#loginForm {
+  margin-top: 15px;
+}
+
+/* Error Message */
+.error-message {
+  color: red;
+  font-size: 0.8em;
+  display: none;
+}
+
+/* Dark Mode - Adjusted colors */
+.dark-mode #auth-container {
+  background: rgba(20, 20, 20, 0.8);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.dark-mode .tab {
+  color: white;
+}
+
+.dark-mode .tab.active {
+  background: #ff9800; /* Orange */
+}
+
+.dark-mode .input-box input {
+  background: #222;
+  color: white;
+  border-color: #ff9800; /* Orange */
+}
+
+.dark-mode .auth-button {
+  background: #ff9800; /* Orange */
+}
+
+.dark-mode .auth-button:hover {
+  background: #e68900; /* Darker Orange */
+}
+/* style.css */
+/* ... (Your existing CSS) ... */
+
+/* Button */
+.auth-button {
+  background: linear-gradient(135deg, #4CAF50, #2E7D32); /* Gradient background */
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 25px; /* Rounded buttons */
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-size: 1em; /* Increased font size */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.auth-button:hover {
+  background: linear-gradient(135deg, #66BB6A, #43A047); /* Slightly lighter gradient on hover */
+  transform: translateY(-3px); /* Slightly lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark Mode Button */
+#newpageBody.dark-mode .auth-button {
+  background: linear-gradient(135deg, #FF9800, #F57C00); /* Dark mode gradient */
+}
+
+
+/* ... (rest of your CSS) ... */
+
+nav {
+  display: flex;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* ... (Your existing CSS) ... */
+
+.input-box {
+  position: relative;
+  margin: 12px 0;
+}
+
+.input-box input {
+  width: 90%; /* Reduced width */
+  padding: 10px;
+  border: 2px solid #1a237e;
+  border-radius: 6px;
+  font-size: 0.9em;
+  outline: none;
+  transition: 0.3s;
+  background: white;
+  color: #333;
+}
+
+.input-box i.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: grey;
+}
+.dark-mode #themeButton i {
+  color: white !important;
+}
+/* ... (rest of your CSS) ... */
+
