@@ -1,41 +1,35 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify
 import openai
 import os
 
 app = Flask(__name__)
 
-# Replace with your actual OpenAI API key
-openai.api_key = os.environ.get("OPENAI_API_KEY")  # Ensure to set up your API key as an environment variable
-
-
-@app.route('/')
-def writing_page():
-    return render_template('writing.html')
+# Set your OpenAI API key
+openai.api_key = "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"  # Replace with your actual API key
 
 @app.route('/generate', methods=['POST'])
 def generate_text():
     try:
         data = request.get_json()
-        prompt = data['prompt']
+        prompt = data.get('prompt')
 
-        response = client.chat.completions.create(
+        if not prompt:
+            return jsonify({"error": "Prompt is required"}), 400
 
-            model="gpt-4o-mini",  # or another suitable model
-
-            messages=[
-                {"role": "system", "content": "You are a helpful assistant."},
-                {"role": "user", "content": prompt}
-            ]
+        response = openai.Completion.create(
+            engine="text-davinci-003",  # Or another suitable engine
+            prompt=prompt,
+            max_tokens=200,  # Adjust as needed
+            temperature=0.7,  # Adjust as needed
+            n=1,
+            stop=None,
         )
 
-        generated_text = response.choices[0].message.content
-        return jsonify({'generated_text': generated_text})
+        generated_text = response.choices[0].text.strip()
+        return jsonify({"generated_text": generated_text})
 
     except Exception as e:
-        app.logger.error(f"Error: {e}")  # Log the error for debugging.
-
-
-        return jsonify({'error': str(e)}), 500 # Return error message and appropriate status code
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True) # Set to False in production
+    app.run(debug=True, port=int(os.environ.get('PORT', 5000)))
